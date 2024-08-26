@@ -14,13 +14,13 @@ describe('Teste web - Cacau Show', () => {
         //Primeiro item
         cy.get('.link')
             .should('have.attr', 'href', '/produto/trufas-lacreme-160g-1000624.html')
-            .eq(0)
+            .eq(2)
             .click()
 
         //Asserção de preço item 1
         cy.get('.it__shelf__discountPrice')
-            .should('contain.text', '\n    R$\n    32.99\n    /un\n')
-
+            .should('contain.text', '\n    R$\n    27.99\n    /un\n')
+                              
         //Adicionar ao carrinho
         cy.get('.it_product__tocart__btn')
             .click()
@@ -33,12 +33,12 @@ describe('Teste web - Cacau Show', () => {
         //Segundo item
         cy.get('.link')
             .should('have.attr', 'href', '/produto/trufas-lacreme-160g-1000624.html')
-            .eq(7)
+            .eq(19)
             .click()
 
         //Asserção de preço item 2
         cy.get('.it__shelf__discountPrice')
-            .should('contain.text', '\n    R$\n    22.99\n    /un\n')
+            .should('contain.text', '\n    R$\n    18.99\n    /un\n')
 
         //Adicionar ao carrinho
         cy.get('.it_product__tocart__btn')
@@ -51,16 +51,16 @@ describe('Teste web - Cacau Show', () => {
         //Asserção de preço item 1
         cy.get('.it__shelf__discountPrice')
             .eq(0)
-            .should('contain.text', '\n    R$\n    32.99\n    /un\n')
+            .should('contain.text', '\n    R$\n    27.99\n    /un\n')
         
         //Asserção de preço item 2
         cy.get('.it__shelf__discountPrice')
             .eq(1)
-            .should('contain.text', '\n    R$\n    22.99\n    /un\n')
+            .should('contain.text', '\n    R$\n    18.99\n    /un\n')
         
         //Asserção de preço total
         cy.get('[class="text-right grand-total"]')
-            .should('have.text', 'R$67.36')
+            .should('have.text', 'R$84.98')
 
     })
 })
