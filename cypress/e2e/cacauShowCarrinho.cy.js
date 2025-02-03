@@ -7,8 +7,8 @@ describe('Teste web - Cacau Show', () => {
     it('Montar carrinho com dois itens', () => {
 
         //categoria de produtos: chocolate
-        cy.get('#cat_002')
-            .should('have.attr', 'href', '/categoria/chocolate')
+        cy.get('#cat_002_02')
+            .should('have.attr', 'href', '/categoria/chocolate/tabletes-e-barras')
             .click()
 
         //Primeiro item
